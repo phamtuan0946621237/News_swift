@@ -18,7 +18,7 @@ class HotController: UIViewController,UITableViewDelegate,UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
-        callAPI(page : page)
+        callAPI(page : 1)
         addRefreshControl()
     }
    

@@ -10,4 +10,5 @@ import Foundation
 class ENV {
     var source = "source"
     var postBySource = "posts/trang-chu"
+    var noibat = "posts/noi-bat"
 }

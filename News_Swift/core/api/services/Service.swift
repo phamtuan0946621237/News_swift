@@ -62,4 +62,22 @@ class Service {
             
         }
     }
+    
+    class func entertainment (
+        page : Int,
+        result : @escaping (_ res : PostBySourceModel) -> Void
+    ) {
+        let parameters : [String : Any]? = ["page" : page,"limit" : 20]
+        let service = Connect()
+        service.fetchGet(parram: parameters, endUrl: ENV().noibat)
+        service.completionHandler {
+            [self] res in
+            DataModel.postBySource(response: res!, callBack: {
+                [self] dateRes in
+                result(dateRes)
+            })
+//            result(res)
+            
+        }
+    }
 }
