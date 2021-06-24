@@ -13,12 +13,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="464" id="KGk-i7-Jjw" customClass="ListVerticalViewCell" customModule="News_Swift" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="350" height="429"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="350" height="429"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Sk-CT-bVB">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="429"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="500"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="at1-iM-s9H">
                                 <rect key="frame" x="16" y="16" width="318" height="160"/>
@@ -32,21 +32,21 @@
                                 <color key="textColor" red="0.95290988679999999" green="0.70147019619999995" blue="0.3163020909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trung Quốc bị tước quyền đăng cai vòng loại World Cup 2022 chỉ sau 1 trận" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i19-hp-kRK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trung Quốc bị tước quyền đăng cai vòng loại World Cup 2022 chỉ sau 1 trận" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i19-hp-kRK">
                                 <rect key="frame" x="16" y="214" width="318" height="79"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIc-hp-7fn">
-                                <rect key="frame" x="16" y="307" width="318" height="76.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIc-hp-7fn">
+                                <rect key="frame" x="16" y="307" width="318" height="57.5"/>
                                 <string key="text">Những bộ phim này đem đến cho người xem những câu chuyện đặc sắc, giàu văn hóa bản địa đến từ Malaysia, Indonesia, Thái Lan, Philippines...</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-qt-bjU">
-                                <rect key="frame" x="16" y="395.5" width="318" height="15"/>
+                                <rect key="frame" x="16" y="376.5" width="318" height="15"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VNExpress. •  1 giờ trước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3h-kr-9KI">
                                         <rect key="frame" x="0.0" y="-0.5" width="318" height="16"/>
@@ -71,7 +71,7 @@
                             <constraint firstItem="Baz-qt-bjU" firstAttribute="top" secondItem="FIc-hp-7fn" secondAttribute="bottom" constant="12" id="GlE-XU-fsS"/>
                             <constraint firstItem="i19-hp-kRK" firstAttribute="top" secondItem="ExS-Hy-PIu" secondAttribute="bottom" constant="10" id="Pw5-DR-EFS"/>
                             <constraint firstAttribute="trailing" secondItem="i19-hp-kRK" secondAttribute="trailing" constant="16" id="SS8-3p-IVz"/>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="ahI-dL-e0K"/>
+                            <constraint firstAttribute="height" constant="500" id="TCa-7d-cjV"/>
                             <constraint firstItem="ExS-Hy-PIu" firstAttribute="leading" secondItem="4Sk-CT-bVB" secondAttribute="leading" constant="16" id="bbm-vh-fa6"/>
                             <constraint firstAttribute="trailing" secondItem="Baz-qt-bjU" secondAttribute="trailing" constant="16" id="d8H-AY-dOV"/>
                             <constraint firstItem="ExS-Hy-PIu" firstAttribute="top" secondItem="at1-iM-s9H" secondAttribute="bottom" constant="12" id="dIx-DK-2mU"/>
@@ -95,6 +95,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="describle" destination="FIc-hp-7fn" id="5bf-5b-9zm"/>
+                <outlet property="heightView" destination="TCa-7d-cjV" id="gNP-vv-yXw"/>
                 <outlet property="icon" destination="at1-iM-s9H" id="jlV-KI-0aX"/>
                 <outlet property="info" destination="o3h-kr-9KI" id="WVk-4j-aut"/>
                 <outlet property="marginTopDescrible" destination="jSO-ft-bmu" id="sPZ-Gp-yWm"/>

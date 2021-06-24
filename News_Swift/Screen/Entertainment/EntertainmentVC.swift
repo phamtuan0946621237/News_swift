@@ -49,7 +49,7 @@ extension EntertainmentVC {
         let cell = tableView.dequeueReusableCell(withIdentifier: NibnameIdentifier().ListVerticalViewCell, for: indexPath) as! ListVerticalViewCell
         let item = data[indexPath.row] as DataItem
         cell.info.text = "\(item.source) •  \("1 giờ trước")"
-        cell.describle.text = item.excerpt
+        cell.describle.text = ""
         if let ex = item.excerpt {
             cell.excerpt = ex
         }
@@ -57,7 +57,7 @@ extension EntertainmentVC {
         cell.source.text = item.category
         cell.sourceTitle.text = item.title
         cell.marginTopDescrible.constant = item.excerpt == "" || item.excerpt == nil ? 0 : 14
-        cell.heightView.constant = item.excerpt == "" || item.excerpt == nil ? 315 : 415
+//        cell.heightView.constant = item.excerpt == "" || item.excerpt == nil ? 315 : 415
         cell.icon.sd_setImage(with: URL(string: item.featureImage), completed: nil)
         
         return cell

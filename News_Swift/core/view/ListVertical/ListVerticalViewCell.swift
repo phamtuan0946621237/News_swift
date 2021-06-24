@@ -9,7 +9,11 @@ import UIKit
 
 class ListVerticalViewCell: UITableViewCell {
 
-    @IBOutlet weak var heightView: NSLayoutConstraint!
+    @IBOutlet weak var heightView: NSLayoutConstraint! {
+        didSet {
+            excerpt != "" ? 430 : 330
+        }
+    }
     @IBOutlet weak var marginTopDescrible: NSLayoutConstraint!
     var excerpt : String = ""
     @IBOutlet weak var describle: UILabel!
@@ -22,7 +26,7 @@ class ListVerticalViewCell: UITableViewCell {
         icon.layer.cornerRadius = 8
 //        self.frame.size.height = 100
 //        marginTopDescrible.constant = excerpt == "" ? 0 : 14
-//        heightView.constant = excerpt == ""  ? 330 : 430
+        heightView.constant = 310
 //        describle.font
 //        describle.font = UIFont.systemFont(ofSize: 1.0)
 

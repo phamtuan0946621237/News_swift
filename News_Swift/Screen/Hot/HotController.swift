@@ -53,33 +53,32 @@ class HotController: UIViewController,UITableViewDelegate,UITableViewDataSource,
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: nibname.ListHorizontalTableViewCell, for: indexPath) as! ListHorizontalTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HorizontalItem", for: indexPath) as! HorizontalItem
+        
         if data.count != 0{
-//            if indexPath.row == 0 {
-//                let cell = tableView.dequeueReusableCell(withIdentifier: nibname.ListVerticalViewCell, for: indexPath) as! ListVerticalViewCell
-//                let item = data[indexPath.row]
-//                cell.info.text = "\(item.source!.name!) •  \("1 giờ trước")"
-//                cell.describle.text = item.excerpt
-//                cell.source.text = item.category?.name
-//                cell.sourceTitle.text = item.title
-//                cell.marginTopDescrible.constant =  14
-////                cell.heightView.constant = 320
-//                if let icon = item.featureImage {
-//                    cell.icon.sd_setImage(with: URL(string: icon), completed: nil)
-//                }
-//                return cell
-//            }
-            
             let item = data[indexPath.row]
-            cell.setItemView(index : indexPath.row,showTitle: true)
-            cell.info.text = "\(item.source!.name!) •  \("1 giờ trước")"
-            cell.category.text = item.category?.name
+            
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: nibname.VerticalItem, for: indexPath) as! VerticalItem
+            
+                cell.info.text = "\(item.source!.name!) •  \("1 giờ trước")"
+                cell.describle.text = item.excerpt
+                cell.source.text = item.category?.name
+            cell.tilteNews.text = item.title
+                if let icon = item.featureImage {
+                    cell.icon.sd_setImage(with: URL(string: icon), completed: nil)
+                }
+                return cell
+            }
+            
             cell.titleNews.text = item.title
+            cell.info.text = "\(item.source!.name!) •  \("1 giờ trước")"
+            cell.setIndex(index: indexPath.row)
+            cell.source.text = item.category?.name
+//            cell.source.text = "heloooo"
             if let icon = item.featureImage {
                 cell.icon.sd_setImage(with: URL(string: icon), completed: nil)
             }
-            
-            cell.tilteSlug.text  = "TIN TỨC MỚI NHẤT"
         }
         
         return cell
@@ -96,15 +95,22 @@ extension HotController {
         spinner.startAnimating()
         return footerView
     }
+    
     func initView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: nibname.ListVerticalViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListVerticalViewCell)
         tableView.register(UINib(nibName: nibname.ListHorizontalTableViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListHorizontalTableViewCell)
+        tableView.register(UINib(nibName: nibname.VerticalItem, bundle: Bundle.main), forCellReuseIdentifier: nibname.VerticalItem)
+        tableView.register(UINib(nibName: "HorizontalItem", bundle: Bundle.main), forCellReuseIdentifier: "HorizontalItem")
+        
+        
+        
         tableView.showsVerticalScrollIndicator = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
     }
+    
     func addRefreshControl() {
         refreshControl.tintColor = UIColor.main
         refreshControl.addTarget(self, action: #selector(refreshContents), for: .valueChanged)

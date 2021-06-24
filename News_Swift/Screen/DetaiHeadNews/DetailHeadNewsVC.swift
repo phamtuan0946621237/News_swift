@@ -15,7 +15,7 @@ class DetailHeadNewsVC: UIViewController,UITableViewDataSource,UITableViewDelega
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: NibnameIdentifier().ListVerticalViewCell, bundle: Bundle.main), forCellReuseIdentifier: NibnameIdentifier().ListVerticalViewCell)
+        tableView.register(UINib(nibName: NibnameIdentifier().VerticalItem, bundle: Bundle.main), forCellReuseIdentifier: NibnameIdentifier().VerticalItem)
         tableView.showsVerticalScrollIndicator = false
 //        print("idNews : ",self.idNews)
         callAPI(source : idNews)
@@ -44,15 +44,16 @@ extension DetailHeadNewsVC {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: NibnameIdentifier().ListVerticalViewCell, for: indexPath) as! ListVerticalViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: NibnameIdentifier().VerticalItem, for: indexPath) as! VerticalItem
         let item = data[indexPath.row]
         cell.info.text = "\(item.source!.name!) •  \("1 giờ trước")"
-        cell.describle.text = ""
+        cell.describle.text = item.excerpt
         cell.source.text = item.category?.name
-        cell.sourceTitle.text = item.title
-        cell.marginTopDescrible.constant = cell.describle.text == "" || cell.describle.text == nil ? 0 : 14
-        cell.heightView.constant = cell.describle.text == "" || cell.describle.text == nil ? 320 : 415
-        cell.icon.sd_setImage(with: URL(string: item.featureImage!), completed: nil)
+        cell.tilteNews.text = item.title
+        if let icon = item.featureImage {
+            cell.icon.sd_setImage(with: URL(string: icon), completed: nil)
+        }
+        
         return cell
     }
     

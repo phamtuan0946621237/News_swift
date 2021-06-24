@@ -9,6 +9,7 @@ import Foundation
 
 class NibnameIdentifier {
     var ListVerticalViewCell = "ListVerticalViewCell"
+    var VerticalItem = "VerticalItem"
     var ListHorizontalTableViewCell = "ListHorizontalTableViewCell"
     var DetailNewsVC = "DetailNewsVC"
     var DetailHeadNewsVC = "DetailHeadNewsVC"

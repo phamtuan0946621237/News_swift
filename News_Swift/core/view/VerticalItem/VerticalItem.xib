@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VerticalItem" rowHeight="469" id="KGk-i7-Jjw" customClass="VerticalItem" customModule="News_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="426" height="469"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="426" height="469"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="zQh-Ik-SNr">
+                        <rect key="frame" x="16" y="32" width="394" height="160"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="160" id="kSc-lt-Ad3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Từ địa phương vươn ra thế giới: Roh, Ghost Lab và loạt phim Đông Nam Á sắp góp mặt trên Netflix" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN1-dv-d96">
+                        <rect key="frame" x="20" y="238" width="386" height="81"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n7-bz-8rl">
+                        <rect key="frame" x="20" y="335" width="386" height="86"/>
+                        <string key="text">Những bộ phim này đem đến cho người xem những câu chuyện đặc sắc, giàu văn hóa bản địa đến từ Malaysia, Indonesia, Thái Lan, Philippines...</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="VNExpress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zJ-aA-mqi">
+                        <rect key="frame" x="16" y="437" width="394" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giải trí" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fY8-EM-p8F">
+                        <rect key="frame" x="20" y="206" width="386" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="fgI-c1-Ujb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" red="0.95290988679999999" green="0.70147019619999995" blue="0.3163020909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fY8-EM-p8F" firstAttribute="top" secondItem="zQh-Ik-SNr" secondAttribute="bottom" constant="14" id="7QQ-Ot-nCp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fY8-EM-p8F" secondAttribute="trailing" id="Boy-nf-1aV"/>
+                    <constraint firstAttribute="trailing" secondItem="zQh-Ik-SNr" secondAttribute="trailing" constant="16" id="EfO-Jz-2id"/>
+                    <constraint firstItem="HN1-dv-d96" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Gzm-qw-JQO"/>
+                    <constraint firstItem="zQh-Ik-SNr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="K8Q-8u-VOf"/>
+                    <constraint firstAttribute="trailing" secondItem="5zJ-aA-mqi" secondAttribute="trailing" constant="16" id="Ll8-OF-DgK"/>
+                    <constraint firstItem="fY8-EM-p8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="V9i-Ya-Gb9"/>
+                    <constraint firstItem="5zJ-aA-mqi" firstAttribute="top" secondItem="0n7-bz-8rl" secondAttribute="bottom" constant="16" id="VbW-at-NJw"/>
+                    <constraint firstAttribute="bottom" secondItem="5zJ-aA-mqi" secondAttribute="bottom" constant="16" id="ZoG-6G-V19"/>
+                    <constraint firstItem="HN1-dv-d96" firstAttribute="top" secondItem="fY8-EM-p8F" secondAttribute="bottom" constant="16" id="aMA-bL-YGa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0n7-bz-8rl" secondAttribute="trailing" id="mFM-G9-7Rf"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HN1-dv-d96" secondAttribute="trailing" id="mGM-I3-wa0"/>
+                    <constraint firstItem="0n7-bz-8rl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ryP-VR-2j4"/>
+                    <constraint firstItem="5zJ-aA-mqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="x4v-SF-WLg"/>
+                    <constraint firstItem="0n7-bz-8rl" firstAttribute="top" secondItem="HN1-dv-d96" secondAttribute="bottom" constant="16" id="yPn-l8-uPu"/>
+                    <constraint firstItem="zQh-Ik-SNr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="zoj-4G-Kg2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="describle" destination="0n7-bz-8rl" id="OV8-N0-qTs"/>
+                <outlet property="icon" destination="zQh-Ik-SNr" id="Aed-IS-Jub"/>
+                <outlet property="info" destination="5zJ-aA-mqi" id="90h-0u-dSO"/>
+                <outlet property="source" destination="fY8-EM-p8F" id="xQ9-SA-8Rb"/>
+                <outlet property="tilteNews" destination="HN1-dv-d96" id="G3E-fP-gJc"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="249.44196428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="appicon" width="1024" height="1024"/>
+    </resources>
+</document>
