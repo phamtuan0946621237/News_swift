@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TestView" customModule="News_Swift" customModuleProvider="target">
+            <connections>
+                <outlet property="btn" destination="gk6-5j-jFB" id="Jwb-3V-331"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="195" height="74"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-8D-PxC">
+                    <rect key="frame" x="0.0" y="0.0" width="195" height="74"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gk6-5j-jFB">
+                            <rect key="frame" x="74.5" y="22" width="46" height="30"/>
+                            <color key="backgroundColor" red="0.28334110979999999" green="0.63903224469999997" blue="0.40872323510000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="handleBtn:" destination="-1" eventType="touchUpInside" id="DZD-of-CIP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                    <constraints>
+                        <constraint firstItem="gk6-5j-jFB" firstAttribute="centerX" secondItem="N1X-8D-PxC" secondAttribute="centerX" id="KIf-h4-RwL"/>
+                        <constraint firstItem="gk6-5j-jFB" firstAttribute="centerY" secondItem="N1X-8D-PxC" secondAttribute="centerY" id="els-yK-rBr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="N1X-8D-PxC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7Yg-Fa-k3C"/>
+                <constraint firstItem="N1X-8D-PxC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ZXG-6k-rYV"/>
+                <constraint firstItem="N1X-8D-PxC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="eqb-PK-1xU"/>
+                <constraint firstItem="N1X-8D-PxC" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="iOB-68-q4a"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-31.159420289855074" y="-40.178571428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

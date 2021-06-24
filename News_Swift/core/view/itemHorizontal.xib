@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemListHorizontal" customModule="News_Swift" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="itemHorizontal" customModule="News_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="348"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oww-mT-DU2">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="348"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="2Wk-T6-Dk3">
+                            <rect key="frame" x="16" y="16" width="382" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="1Xy-o1-IWn"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bóng đa quốc tế" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLn-fD-bet">
+                            <rect key="frame" x="16" y="188" width="382" height="16"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <color key="textColor" red="0.95290988679999999" green="0.70147019619999995" blue="0.3163020909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trung Quốc bị tước quyền đăng cai vòng loại World Cup 2022 chỉ sau 1 trận" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfS-qy-9x0">
+                            <rect key="frame" x="16" y="214" width="382" height="79"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3NF-qM-gWR">
+                            <rect key="frame" x="16" y="305" width="382" height="15"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VNExpress. •  1 giờ trước" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMN-Dz-jMX">
+                                    <rect key="frame" x="0.0" y="-0.5" width="382" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="GMN-Dz-jMX" secondAttribute="trailing" id="1xN-3b-pfF"/>
+                                <constraint firstAttribute="height" constant="15" id="9Xe-Qa-2jD"/>
+                                <constraint firstItem="GMN-Dz-jMX" firstAttribute="leading" secondItem="3NF-qM-gWR" secondAttribute="leading" id="E1c-Mv-IJ9"/>
+                                <constraint firstItem="GMN-Dz-jMX" firstAttribute="centerY" secondItem="3NF-qM-gWR" secondAttribute="centerY" id="WJZ-L3-AqT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DfS-qy-9x0" secondAttribute="trailing" constant="16" id="AvV-zs-sow"/>
+                        <constraint firstItem="yLn-fD-bet" firstAttribute="top" secondItem="2Wk-T6-Dk3" secondAttribute="bottom" constant="12" id="EkM-e9-NkH"/>
+                        <constraint firstAttribute="trailing" secondItem="yLn-fD-bet" secondAttribute="trailing" constant="16" id="Ij2-xv-V5N"/>
+                        <constraint firstItem="DfS-qy-9x0" firstAttribute="top" secondItem="yLn-fD-bet" secondAttribute="bottom" constant="10" id="Uu7-1f-v0h"/>
+                        <constraint firstAttribute="trailing" secondItem="3NF-qM-gWR" secondAttribute="trailing" constant="16" id="UxQ-Lr-ZAZ"/>
+                        <constraint firstItem="2Wk-T6-Dk3" firstAttribute="top" secondItem="Oww-mT-DU2" secondAttribute="top" constant="16" id="XPM-8Z-uHJ"/>
+                        <constraint firstItem="3NF-qM-gWR" firstAttribute="top" secondItem="DfS-qy-9x0" secondAttribute="bottom" constant="12" id="Ypz-4L-atR"/>
+                        <constraint firstAttribute="trailing" secondItem="2Wk-T6-Dk3" secondAttribute="trailing" constant="16" id="eex-9c-lce"/>
+                        <constraint firstItem="2Wk-T6-Dk3" firstAttribute="leading" secondItem="Oww-mT-DU2" secondAttribute="leading" constant="16" id="mBi-TJ-ndW"/>
+                        <constraint firstItem="3NF-qM-gWR" firstAttribute="leading" secondItem="Oww-mT-DU2" secondAttribute="leading" constant="16" id="mvv-Pc-FQ3"/>
+                        <constraint firstItem="yLn-fD-bet" firstAttribute="leading" secondItem="Oww-mT-DU2" secondAttribute="leading" constant="16" id="tLh-ES-KIV"/>
+                        <constraint firstItem="DfS-qy-9x0" firstAttribute="leading" secondItem="Oww-mT-DU2" secondAttribute="leading" constant="16" id="vtG-vR-AJW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Oww-mT-DU2" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="7TX-9x-XlG"/>
+                <constraint firstItem="Oww-mT-DU2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WJQ-kf-lTJ"/>
+                <constraint firstItem="Oww-mT-DU2" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="jNT-K4-iyb"/>
+                <constraint firstItem="Oww-mT-DU2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qYj-Mr-cEA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconNews" destination="2Wk-T6-Dk3" id="GBO-Fd-wep"/>
+                <outlet property="info" destination="GMN-Dz-jMX" id="Cg2-vX-LiO"/>
+                <outlet property="source" destination="yLn-fD-bet" id="8f8-wy-fNJ"/>
+                <outlet property="title" destination="DfS-qy-9x0" id="WmG-ol-WNg"/>
+            </connections>
+            <point key="canvasLocation" x="188.40579710144928" y="-297.99107142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="appicon" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
