@@ -29,7 +29,9 @@ class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var detailNewsModel = DetailNewsModel()
     var heightTableView = 720
     @IBOutlet weak var heightTinlienquan: NSLayoutConstraint!
-    
+//    var currentLocation: CLLocation!
+
+    @IBOutlet weak var shareView: UIView!
     // life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,11 @@ extension DetailNewsVC {
         detailNewsModel.onClickBack(handle: { [self] () in
             navigationController?.popViewController(animated: true)
         })
+        
+        let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
+        self.shareView.addGestureRecognizer(share)
+
+        
     }
     
     func setupTableView() {
@@ -199,6 +206,15 @@ extension DetailNewsVC {
 }
 // action
 extension DetailNewsVC {
+    @objc func shareAction(sender : UITapGestureRecognizer) {
+        let text = self.data.title
+        let myWebsite = NSURL(string: self.data.sourceLink!)
+        let shareAll = [text, myWebsite] as [Any]
+            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func handleAddSameSource(_ sender: Any) {
         self.page += 1
         self.heightTableTincung.constant = self.heightTableTincung.constant + CGFloat(self.heightTableView)
@@ -211,3 +227,6 @@ extension DetailNewsVC {
         callAPITinlienquan(slug: self.slug, page: self.pageTinLienquan)
     }
 }
+
+
+

@@ -37,22 +37,22 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrL-rg-3Sr">
-                                <rect key="frame" x="132" y="0.0" width="238" height="204"/>
+                                <rect key="frame" x="116" y="0.0" width="254" height="204"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BGD-3H-ddp">
-                                        <rect key="frame" x="0.0" y="0.0" width="238" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="254" height="16"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <color key="textColor" red="0.95290988679999999" green="0.70147019619999995" blue="0.3163020909" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIP-FZ-75i">
-                                        <rect key="frame" x="0.0" y="26" width="238" height="147.5"/>
+                                        <rect key="frame" x="0.0" y="26" width="254" height="147.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsE-XS-oEP">
-                                        <rect key="frame" x="0.0" y="183.5" width="238" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="183.5" width="254" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                             <constraint firstItem="IQM-NZ-nCW" firstAttribute="top" secondItem="433-rG-QY8" secondAttribute="top" id="IWg-eG-MOf"/>
                             <constraint firstAttribute="trailing" secondItem="RrL-rg-3Sr" secondAttribute="trailing" id="c3U-ki-IY4"/>
                             <constraint firstItem="IQM-NZ-nCW" firstAttribute="leading" secondItem="433-rG-QY8" secondAttribute="leading" id="eGs-4m-IsZ"/>
-                            <constraint firstItem="RrL-rg-3Sr" firstAttribute="leading" secondItem="IQM-NZ-nCW" secondAttribute="trailing" constant="32" id="nth-2Y-r9R"/>
+                            <constraint firstItem="RrL-rg-3Sr" firstAttribute="leading" secondItem="IQM-NZ-nCW" secondAttribute="trailing" constant="16" id="nth-2Y-r9R"/>
                             <constraint firstItem="RrL-rg-3Sr" firstAttribute="top" secondItem="433-rG-QY8" secondAttribute="top" id="v0K-Sd-zrQ"/>
                         </constraints>
                     </view>
