@@ -15,40 +15,31 @@ class HotController: UIViewController,UITableViewDelegate,UITableViewDataSource,
     var data : [PostBySourceItemModel] = []
     var page : Int = 1
     var refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initView()
+        setupTableView()
         callAPI(page : 1)
         addRefreshControl()
     }
-   
-    // callAPI
-    func callAPI(page : Int) {
-        Service.hot(
-            page: page,
-            result: { [self] res in
-                DispatchQueue.main.async {
-                self.tableView.tableFooterView = nil
-                }
-            if res.success == true {
-                if let arr = res.items {
-                    for obj in arr {
-                        self.data.append(obj)
-                    }
-                    self.perform(#selector(finishedRefreshing))
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }else {
-                print("fail")
-            }
-        })
-    }
-    
-    // tableView
+}
+
+// setup TableView
+extension HotController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: nibname.ListVerticalViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListVerticalViewCell)
+        tableView.register(UINib(nibName: nibname.ListHorizontalTableViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListHorizontalTableViewCell)
+        tableView.register(UINib(nibName: nibname.VerticalItem, bundle: Bundle.main), forCellReuseIdentifier: nibname.VerticalItem)
+        tableView.register(UINib(nibName: "HorizontalItem", bundle: Bundle.main), forCellReuseIdentifier: "HorizontalItem")
+        tableView.showsVerticalScrollIndicator = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
     }
     
     
@@ -96,21 +87,6 @@ extension HotController {
         return footerView
     }
     
-    func initView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: nibname.ListVerticalViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListVerticalViewCell)
-        tableView.register(UINib(nibName: nibname.ListHorizontalTableViewCell, bundle: Bundle.main), forCellReuseIdentifier: nibname.ListHorizontalTableViewCell)
-        tableView.register(UINib(nibName: nibname.VerticalItem, bundle: Bundle.main), forCellReuseIdentifier: nibname.VerticalItem)
-        tableView.register(UINib(nibName: "HorizontalItem", bundle: Bundle.main), forCellReuseIdentifier: "HorizontalItem")
-        
-        
-        
-        tableView.showsVerticalScrollIndicator = false
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
-    }
-    
     func addRefreshControl() {
         refreshControl.tintColor = UIColor.main
         refreshControl.addTarget(self, action: #selector(refreshContents), for: .valueChanged)
@@ -124,6 +100,34 @@ extension HotController {
 
 // action
 extension HotController {
+    func callAPI(page : Int) {
+        Service.hot(
+            page: page,
+            result: { [self] res in
+                DispatchQueue.main.async {
+                self.tableView.tableFooterView = nil
+                }
+                switch res.success {
+                    case true :
+                        if let arr = res.items {
+                            for obj in arr {
+                                self.data.append(obj)
+                            }
+                            self.perform(#selector(finishedRefreshing))
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                        break;
+                    case false :
+                        print("fail")
+                        break;
+                    default :
+                        break
+                }
+        })
+    }
+    
     @objc func refreshContents() {
         self.data = []
         callAPI(page : 1)
@@ -141,6 +145,9 @@ extension HotController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: nibname.DetailNewsVC) as? DetailNewsVC
         self.navigationController?.pushViewController(vc!, animated: true)
+        vc!.slug = data[indexPath.row].slug
 //        vc?.idProduct = product[indexPath.row].idPro!
     }
 }
+
+

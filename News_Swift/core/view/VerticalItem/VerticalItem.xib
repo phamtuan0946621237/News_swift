@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="VNExpress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zJ-aA-mqi">
-                        <rect key="frame" x="16" y="437" width="394" height="16"/>
+                        <rect key="frame" x="20" y="437" width="386" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -51,21 +51,22 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="fY8-EM-p8F" firstAttribute="top" secondItem="zQh-Ik-SNr" secondAttribute="bottom" constant="14" id="7QQ-Ot-nCp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="fY8-EM-p8F" secondAttribute="trailing" id="Boy-nf-1aV"/>
                     <constraint firstAttribute="trailing" secondItem="zQh-Ik-SNr" secondAttribute="trailing" constant="16" id="EfO-Jz-2id"/>
                     <constraint firstItem="HN1-dv-d96" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Gzm-qw-JQO"/>
                     <constraint firstItem="zQh-Ik-SNr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="K8Q-8u-VOf"/>
-                    <constraint firstAttribute="trailing" secondItem="5zJ-aA-mqi" secondAttribute="trailing" constant="16" id="Ll8-OF-DgK"/>
+                    <constraint firstAttribute="trailing" secondItem="5zJ-aA-mqi" secondAttribute="trailing" constant="20" id="Rez-mV-IfT"/>
                     <constraint firstItem="fY8-EM-p8F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="V9i-Ya-Gb9"/>
                     <constraint firstItem="5zJ-aA-mqi" firstAttribute="top" secondItem="0n7-bz-8rl" secondAttribute="bottom" constant="16" id="VbW-at-NJw"/>
                     <constraint firstAttribute="bottom" secondItem="5zJ-aA-mqi" secondAttribute="bottom" constant="16" id="ZoG-6G-V19"/>
                     <constraint firstItem="HN1-dv-d96" firstAttribute="top" secondItem="fY8-EM-p8F" secondAttribute="bottom" constant="16" id="aMA-bL-YGa"/>
+                    <constraint firstItem="5zJ-aA-mqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ftH-DM-20H"/>
                     <constraint firstAttribute="trailingMargin" secondItem="0n7-bz-8rl" secondAttribute="trailing" id="mFM-G9-7Rf"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HN1-dv-d96" secondAttribute="trailing" id="mGM-I3-wa0"/>
                     <constraint firstItem="0n7-bz-8rl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ryP-VR-2j4"/>
-                    <constraint firstItem="5zJ-aA-mqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="x4v-SF-WLg"/>
                     <constraint firstItem="0n7-bz-8rl" firstAttribute="top" secondItem="HN1-dv-d96" secondAttribute="bottom" constant="16" id="yPn-l8-uPu"/>
                     <constraint firstItem="zQh-Ik-SNr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="32" id="zoj-4G-Kg2"/>
                 </constraints>
@@ -75,6 +76,7 @@
                 <outlet property="describle" destination="0n7-bz-8rl" id="OV8-N0-qTs"/>
                 <outlet property="icon" destination="zQh-Ik-SNr" id="Aed-IS-Jub"/>
                 <outlet property="info" destination="5zJ-aA-mqi" id="90h-0u-dSO"/>
+                <outlet property="marginTopDescrible" destination="yPn-l8-uPu" id="c4W-tw-fVn"/>
                 <outlet property="source" destination="fY8-EM-p8F" id="xQ9-SA-8Rb"/>
                 <outlet property="tilteNews" destination="HN1-dv-d96" id="G3E-fP-gJc"/>
             </connections>

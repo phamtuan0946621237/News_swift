@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIP-FZ-75i">
-                                        <rect key="frame" x="0.0" y="32" width="238" height="135.5"/>
+                                        <rect key="frame" x="0.0" y="26" width="238" height="147.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,13 +60,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="OsE-XS-oEP" firstAttribute="top" secondItem="nIP-FZ-75i" secondAttribute="bottom" constant="16" id="2wO-Qg-Q0z"/>
+                                    <constraint firstItem="OsE-XS-oEP" firstAttribute="top" secondItem="nIP-FZ-75i" secondAttribute="bottom" constant="10" id="2wO-Qg-Q0z"/>
                                     <constraint firstAttribute="trailing" secondItem="nIP-FZ-75i" secondAttribute="trailing" id="9Tc-va-T5h"/>
                                     <constraint firstItem="nIP-FZ-75i" firstAttribute="leading" secondItem="RrL-rg-3Sr" secondAttribute="leading" id="Ij0-fv-dov"/>
                                     <constraint firstItem="BGD-3H-ddp" firstAttribute="top" secondItem="RrL-rg-3Sr" secondAttribute="top" id="Sxa-Ha-52J"/>
                                     <constraint firstItem="BGD-3H-ddp" firstAttribute="leading" secondItem="RrL-rg-3Sr" secondAttribute="leading" id="YVm-3c-EpL"/>
                                     <constraint firstAttribute="bottom" secondItem="OsE-XS-oEP" secondAttribute="bottom" id="ZCl-jA-tMC"/>
-                                    <constraint firstItem="nIP-FZ-75i" firstAttribute="top" secondItem="BGD-3H-ddp" secondAttribute="bottom" constant="16" id="g0e-p0-fZc"/>
+                                    <constraint firstItem="nIP-FZ-75i" firstAttribute="top" secondItem="BGD-3H-ddp" secondAttribute="bottom" constant="10" id="g0e-p0-fZc"/>
                                     <constraint firstItem="OsE-XS-oEP" firstAttribute="leading" secondItem="RrL-rg-3Sr" secondAttribute="leading" id="gER-cw-Y92"/>
                                     <constraint firstAttribute="trailing" secondItem="BGD-3H-ddp" secondAttribute="trailing" id="m5C-Hl-Q7U"/>
                                     <constraint firstAttribute="trailing" secondItem="OsE-XS-oEP" secondAttribute="trailing" id="ocw-mE-iI8"/>
@@ -84,6 +84,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="433-rG-QY8" firstAttribute="top" secondItem="AED-Td-1er" secondAttribute="bottom" constant="16" id="02g-3w-BMR"/>
                     <constraint firstAttribute="bottomMargin" secondItem="433-rG-QY8" secondAttribute="bottom" constant="16" id="1BA-Xd-Osm"/>

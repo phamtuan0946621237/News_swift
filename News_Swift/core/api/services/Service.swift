@@ -80,4 +80,62 @@ class Service {
             
         }
     }
+    
+    class func sameSource (
+        page : Int,
+        slug : String,
+        result : @escaping (_ res : PostBySourceModel) -> Void
+    ) {
+        let parameters : [String : Any]? = ["page" : page,"limit" : 5]
+        let service = Connect()
+        service.fetchGet(parram: parameters, endUrl: "\(ENV().sameSource)/\(slug)")
+        service.completionHandler {
+            [self] res in
+            DataModel.postBySource(response: res!, callBack: {
+                [self] dateRes in
+                result(dateRes)
+            })
+//            result(res)
+            
+        }
+    }
+    
+    class func tinlienquan (
+        page : Int,
+        slug : String,
+        result : @escaping (_ res : PostBySourceModel) -> Void
+    ) {
+        let parameters : [String : Any]? = ["page" : page,"limit" : 5]
+        let service = Connect()
+        service.fetchGet(parram: parameters, endUrl: "\(ENV().tinlienquan)/\(slug)")
+        service.completionHandler {
+            [self] res in
+            DataModel.postBySource(response: res!, callBack: {
+                [self] dateRes in
+                result(dateRes)
+            })
+//            result(res)
+            
+        }
+    }
+    
+    
+    
+    class func detailNews (
+        slug : String,
+        result : @escaping (_ res : DetailNewsResModel) -> Void
+    ) {
+//        let parameters : [String : Any]? = ["slug" : slug]
+        let service = Connect()
+        service.fetchGet(parram: nil, endUrl: "\(ENV().detail)/\(slug)")
+        service.completionHandler {
+            [self] res in
+            DataModel.DetailNews(response: res!, callBack: {
+                [self] dateRes in
+                result(dateRes)
+            })
+//            result(res)
+            
+        }
+    }
 }

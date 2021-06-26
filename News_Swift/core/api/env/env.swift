@@ -11,4 +11,7 @@ class ENV {
     var source = "source"
     var postBySource = "posts/trang-chu"
     var noibat = "posts/noi-bat"
+    var detail = "posts"
+    var sameSource = "posts/same-source"
+    var tinlienquan = "posts/related"
 }

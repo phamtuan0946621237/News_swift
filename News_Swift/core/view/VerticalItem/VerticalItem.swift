@@ -10,7 +10,8 @@ import UIKit
 class VerticalItem: UITableViewCell {
     @IBOutlet weak var info: UILabel!
     
-    @IBOutlet weak var source: UILabel!
+    @IBOutlet weak var source: UILabel! 
+    @IBOutlet weak var marginTopDescrible: NSLayoutConstraint!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var tilteNews: UILabel!
     @IBOutlet weak var describle: UILabel!

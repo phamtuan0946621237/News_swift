@@ -66,9 +66,10 @@ extension EntertainmentVC {
 // action
 extension EntertainmentVC {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        entertaimentModal.handleRow(index : indexPath.row)
+//        entertaimentModal.handleRow(index : indexPath.row)
         let vc = storyboard?.instantiateViewController(withIdentifier: NibnameIdentifier().DetailNewsVC) as? DetailNewsVC
         self.navigationController?.pushViewController(vc!, animated: true)
+        vc!.slug = data[indexPath.row].slug
     }
     
     func callAPI(page : Int) {
@@ -78,19 +79,24 @@ extension EntertainmentVC {
                 DispatchQueue.main.async {
                 self.tableView.tableFooterView = nil
                 }
-            if res.success == true {
-                if let arr = res.items {
-                    for obj in arr {
-                        self.data.append(obj)
-                    }
-                    self.perform(#selector(finishedRefreshing))
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+                switch res.success {
+                    case true :
+                        if let arr = res.items {
+                            for obj in arr {
+                                self.data.append(obj)
+                            }
+                            self.perform(#selector(finishedRefreshing))
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
+                        break;
+                    case false :
+                        print("fail")
+                        break;
+                    default :
+                        break
                 }
-            }else {
-                print("fail")
-            }
         })
     }
     

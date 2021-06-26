@@ -74,6 +74,7 @@ class HeadNewsVC: UIViewController,UICollectionViewDelegate,UICollectionViewData
         self.navigationController?.pushViewController(vc!, animated: true)
         if let id = dataRes[indexPath.row].id {
             vc?.idNews = id
+            vc?.source = dataRes[indexPath.row].name
         }
         
     }

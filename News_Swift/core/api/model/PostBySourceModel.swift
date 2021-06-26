@@ -12,6 +12,11 @@ class PostBySourceModel {
     var items : [PostBySourceItemModel]?
 }
 
+class DetailNewsResModel {
+    var success : Bool?
+    var data : PostBySourceItemModel?
+}
+
 class PostBySourceItemModel {
     var id : Int?
     var title : String?
