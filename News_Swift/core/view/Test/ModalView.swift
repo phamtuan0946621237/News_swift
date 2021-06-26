@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 typealias Hanlde = (Int) -> ()
-class TestView : UIView {
+class TestVC : UIView {
 //    override init(frame : CGRect) {
 //        super.init(frame: frame)
     @IBOutlet weak var btn: UIButton!

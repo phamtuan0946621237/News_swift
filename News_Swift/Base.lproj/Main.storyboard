@@ -137,12 +137,22 @@
                                                     <constraint firstAttribute="height" constant="24" id="SgL-Gh-4ab"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1f-ff-9ea">
-                                                <rect key="frame" x="56" y="13.5" width="225" height="21"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hcl-rG-n3K">
+                                                <rect key="frame" x="46" y="9" width="235" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aa" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1f-ff-9ea">
+                                                        <rect key="frame" x="212" y="4.5" width="23" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="j1f-ff-9ea" firstAttribute="centerY" secondItem="hcl-rG-n3K" secondAttribute="centerY" id="XvN-Wx-cKg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="j1f-ff-9ea" secondAttribute="trailing" id="u8j-YS-dzH"/>
+                                                </constraints>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO9-VX-hfc">
                                                 <rect key="frame" x="297" y="9" width="101" height="30"/>
                                                 <subviews>
@@ -177,14 +187,15 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="dO9-VX-hfc" secondAttribute="trailing" constant="16" id="2iq-gV-COd"/>
-                                            <constraint firstItem="j1f-ff-9ea" firstAttribute="centerY" secondItem="wtH-DU-KIP" secondAttribute="centerY" id="B9I-r2-xke"/>
-                                            <constraint firstItem="j1f-ff-9ea" firstAttribute="leading" secondItem="0Sn-QO-lVM" secondAttribute="trailing" constant="16" id="O3P-p1-uQf"/>
+                                            <constraint firstAttribute="bottom" secondItem="hcl-rG-n3K" secondAttribute="bottom" constant="9" id="BCg-s6-fIh"/>
                                             <constraint firstItem="0Sn-QO-lVM" firstAttribute="leading" secondItem="wtH-DU-KIP" secondAttribute="leading" constant="16" id="OGq-wi-OSX"/>
+                                            <constraint firstItem="hcl-rG-n3K" firstAttribute="top" secondItem="wtH-DU-KIP" secondAttribute="top" constant="9" id="OXB-by-HMQ"/>
                                             <constraint firstAttribute="bottom" secondItem="dO9-VX-hfc" secondAttribute="bottom" constant="9" id="WQy-Pc-ERq"/>
-                                            <constraint firstItem="dO9-VX-hfc" firstAttribute="leading" secondItem="j1f-ff-9ea" secondAttribute="trailing" constant="16" id="dlc-Jw-GaJ"/>
+                                            <constraint firstItem="hcl-rG-n3K" firstAttribute="leading" secondItem="0Sn-QO-lVM" secondAttribute="trailing" constant="6" id="buH-JC-tnF"/>
                                             <constraint firstItem="0Sn-QO-lVM" firstAttribute="centerY" secondItem="wtH-DU-KIP" secondAttribute="centerY" id="exF-x5-9hf"/>
                                             <constraint firstItem="dO9-VX-hfc" firstAttribute="top" secondItem="wtH-DU-KIP" secondAttribute="top" constant="9" id="g9C-x7-uLu"/>
                                             <constraint firstAttribute="height" constant="48" id="par-18-fSQ"/>
+                                            <constraint firstItem="dO9-VX-hfc" firstAttribute="leading" secondItem="hcl-rG-n3K" secondAttribute="trailing" constant="16" id="rOG-GN-VvL"/>
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JW-B3-JEy">
@@ -436,6 +447,7 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="describle" destination="BIX-GZ-I30" id="zuo-3U-o2m"/>
+                        <outlet property="fontSizeView" destination="j1f-ff-9ea" id="Nf7-ef-JQh"/>
                         <outlet property="heightTableTincung" destination="d6k-0V-Bbq" id="rYw-mN-ghi"/>
                         <outlet property="heightTinlienquan" destination="qro-ZX-27c" id="snk-QI-Jgm"/>
                         <outlet property="icBack" destination="0Sn-QO-lVM" id="19X-Ww-mmo"/>

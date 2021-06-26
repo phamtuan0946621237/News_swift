@@ -29,8 +29,9 @@ class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var detailNewsModel = DetailNewsModel()
     var heightTableView = 720
     @IBOutlet weak var heightTinlienquan: NSLayoutConstraint!
-//    var currentLocation: CLLocation!
+    let screenSize = UIScreen.main.bounds.size
 
+    @IBOutlet weak var fontSizeView: UILabel!
     @IBOutlet weak var shareView: UIView!
     // life cycle
     override func viewDidLoad() {
@@ -40,7 +41,9 @@ class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         callAPI(slug: self.slug)
         callAPISameSource(slug: self.slug, page: self.page)
         callAPITinlienquan(slug: self.slug, page: self.pageTinLienquan)
+        
     }
+    
 }
 
 // view
@@ -59,9 +62,29 @@ extension DetailNewsVC {
         
         let share = UITapGestureRecognizer(target: self, action:  #selector(self.shareAction))
         self.shareView.addGestureRecognizer(share)
-
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(DetailNewsVC.changeFontSize))
+        fontSizeView.isUserInteractionEnabled = true
+        fontSizeView.addGestureRecognizer(tap)
         
     }
+    
+    @objc func changeFontSize(sender:UITapGestureRecognizer) {
+        let vc = ModalViewController()
+        vc.modalPresentationStyle = .fullScreen
+//        vc.view.backgroundColor = UIColor(red: 12/255, green: 13/255, blue: 14/255, alpha: 0.5)
+        present(vc,animated: true)
+        vc.dismisModal(handle: { [self]  in
+                        print("oooo : ")
+            vc.dismiss(animated: true, completion: nil)
+        })
+        
+    }
+    
+    func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
+        return false
+    }
+    
     
     func setupTableView() {
         tableTincung.dataSource = self
@@ -214,6 +237,10 @@ extension DetailNewsVC {
             activityViewController.popoverPresentationController?.sourceView = self.view
             self.present(activityViewController, animated: true, completion: nil)
     }
+    
+//    @objc func hanldeChangeFontSize(sender : UITapGestureRecognizer) {
+//        print("heloo")
+//    }
     
     @IBAction func handleAddSameSource(_ sender: Any) {
         self.page += 1
