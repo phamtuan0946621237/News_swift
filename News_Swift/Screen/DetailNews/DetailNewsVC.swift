@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+
 class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet weak var icBack: UIImageView!
     @IBOutlet weak var scrollview: UIScrollView!
@@ -28,11 +29,15 @@ class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var slug : String!
     var detailNewsModel = DetailNewsModel()
     var heightTableView = 720
+    @IBOutlet weak var webview: WKWebView!
     @IBOutlet weak var heightTinlienquan: NSLayoutConstraint!
     let screenSize = UIScreen.main.bounds.size
-
+    @IBOutlet weak var titleOriginNews: UILabel!
     @IBOutlet weak var fontSizeView: UILabel!
     @IBOutlet weak var shareView: UIView!
+    @IBOutlet weak var htmlView: UIView!
+    
+//    @IBOutlet weak var heightHtml: NSLayoutConstraint!
     // life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +46,16 @@ class DetailNewsVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         callAPI(slug: self.slug)
         callAPISameSource(slug: self.slug, page: self.page)
         callAPITinlienquan(slug: self.slug, page: self.pageTinLienquan)
+        let defaults = UserDefaults.standard
+        let ratio = defaults.float(forKey: "ratio")
+        getFontSizeTilte(ratio : ratio)
+//        heightHtml.constant = 0
         
     }
     
+    
 }
+
 
 // view
 extension DetailNewsVC {
@@ -67,15 +78,35 @@ extension DetailNewsVC {
         fontSizeView.isUserInteractionEnabled = true
         fontSizeView.addGestureRecognizer(tap)
         
+        let originAction = UITapGestureRecognizer(target: self, action:  #selector(self.onClickOriginNews))
+        self.originNews.addGestureRecognizer(originAction)
+        
+    }
+    
+    @objc func onClickOriginNews(sender : UITapGestureRecognizer) {
+        let vc = WebViewVC()
+        vc.titleeee = self.data.source!.name!
+        vc.url = self.data.sourceLink!
+        vc.modalPresentationStyle = .pageSheet
+        present(vc,animated: true)
+        vc.onBack(handle: { [self] in
+            vc.dismiss(animated: true, completion: nil)
+        })
+    }
+    
+    func getFontSizeTilte(ratio : Float) {
+        titleNews.font = UIFont.systemFont(ofSize: 22.0 * CGFloat(ratio),weight : .bold)
+        describle.font = UIFont.systemFont(ofSize: 18 * CGFloat(ratio), weight: .semibold)
+        info.font = UIFont.systemFont(ofSize: 13 * CGFloat(ratio), weight: .regular)
+        titleOriginNews.font = UIFont.systemFont(ofSize: 12 * CGFloat(ratio), weight: .regular)
     }
     
     @objc func changeFontSize(sender:UITapGestureRecognizer) {
         let vc = ModalViewController()
-        vc.modalPresentationStyle = .fullScreen
-//        vc.view.backgroundColor = UIColor(red: 12/255, green: 13/255, blue: 14/255, alpha: 0.5)
+        vc.modalPresentationStyle = .overFullScreen
         present(vc,animated: true)
+        self.changeFont(vc: vc)
         vc.dismisModal(handle: { [self]  in
-                        print("oooo : ")
             vc.dismiss(animated: true, completion: nil)
         })
         
@@ -84,7 +115,6 @@ extension DetailNewsVC {
     func presentationControllerShouldDismiss(_ presentationController: UIPresentationController) -> Bool {
         return false
     }
-    
     
     func setupTableView() {
         tableTincung.dataSource = self
@@ -158,6 +188,7 @@ extension DetailNewsVC {
             result: { [self] res in
                 switch res.success {
                 case true :
+                    print("self.data.html",self.data.html)
                     if let response = res.data {
                         self.data = response
                         self.titleNews.text = self.data.title
@@ -166,6 +197,50 @@ extension DetailNewsVC {
                         if let icon = self.data.featureImage {
                             self.icon.sd_setImage(with: URL(string: icon), completed: nil)
                         }
+                        
+//                        let body = """
+//                            \((self.data.html)!)
+//                            """
+//                        let html = """
+//                            <!DOCTYPE html>
+//                            <html lang="en">
+//                            <style>
+//                            p {
+//                                        margin: 2px;
+//                                        padding : 2px;
+//                                        /* fontSize: fontsize.text18 * ratioFontSize, */
+//                                        font-weight: "normal";
+//                                        font-style: "normal";
+//                                        line-height: 36;
+//                                        color: black
+//                                    }
+//                                    ul {
+//                                        margin: 2px;
+//                                        padding : 2px;
+//                                        /* font-size: fontsize.text19 * ratioFontSize; */
+//                                        font-weight: "normal";
+//                                        font-style: "normal";
+//                                        line-height: 36;
+//                                        color: black
+//                                    }
+//                                    strong{
+//                                        font-weight: bold;
+//                                    }
+//                                    em {
+//                                        text-decoration : 'underline'
+//                                    }
+//                            </style>
+//                            <head>
+//                                <meta charset="UTF-8">
+//                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//                                <title>Document</title>
+//                            </head>
+//                            <body>
+//                                \(body)
+//                            </body>
+//                            </html>
+//                            """
+//                        webview.loadHTMLString(html, baseURL: nil)
                     }
                     
                     break;
@@ -229,6 +304,13 @@ extension DetailNewsVC {
 }
 // action
 extension DetailNewsVC {
+    func changeFont(vc : ModalViewController) {
+        vc.changeFontSize(handle: { [self] (size) in
+            let defaults = UserDefaults.standard
+            defaults.set(size, forKey: "ratio")
+            getFontSizeTilte(ratio: size)
+        })
+    }
     @objc func shareAction(sender : UITapGestureRecognizer) {
         let text = self.data.title
         let myWebsite = NSURL(string: self.data.sourceLink!)

@@ -15,12 +15,17 @@ class HotController: UIViewController,UITableViewDelegate,UITableViewDataSource,
     var data : [PostBySourceItemModel] = []
     var page : Int = 1
     var refreshControl = UIRefreshControl()
+    let date = Date()
     
+    @IBOutlet weak var time: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         callAPI(page : 1)
         addRefreshControl()
+        // view
+        let formate = date.getFormattedDate(format: "EEEE, d MMM, yyyy")
+        self.time.text = formate
     }
 }
 
@@ -151,3 +156,10 @@ extension HotController {
 }
 
 
+extension Date {
+   func getFormattedDate(format: String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
+    }
+}

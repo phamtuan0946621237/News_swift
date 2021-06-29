@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0528F00151FE330743D8FEC6 /* Pods_News_Swift_News_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520ABFAE21D98D10C0E1F970 /* Pods_News_Swift_News_SwiftUITests.framework */; };
 		777C837050565468A6418FCD /* Pods_News_SwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC02FA01995C1BAC5A907C8 /* Pods_News_SwiftTests.framework */; };
+		846558AC2689BA560069282D /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846558AA2689BA560069282D /* WebViewVC.swift */; };
+		846558AD2689BA560069282D /* WebViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846558AB2689BA560069282D /* WebViewVC.xib */; };
 		84781AE7268745E400C21365 /* Utitils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84781AE6268745E400C21365 /* Utitils.swift */; };
 		84781AE92687501600C21365 /* ModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84781AE82687501600C21365 /* ModalVC.swift */; };
 		84781AEB2687502300C21365 /* ModalVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84781AEA2687502300C21365 /* ModalVC.xib */; };
@@ -85,6 +87,8 @@
 		4FFA7945ABA90CC42D04CC1C /* Pods-News_Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News_Swift.debug.xcconfig"; path = "Target Support Files/Pods-News_Swift/Pods-News_Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		520ABFAE21D98D10C0E1F970 /* Pods_News_Swift_News_SwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_Swift_News_SwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FC02FA01995C1BAC5A907C8 /* Pods_News_SwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_SwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846558AA2689BA560069282D /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		846558AB2689BA560069282D /* WebViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewVC.xib; sourceTree = "<group>"; };
 		84781AE6268745E400C21365 /* Utitils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utitils.swift; sourceTree = "<group>"; };
 		84781AE82687501600C21365 /* ModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVC.swift; sourceTree = "<group>"; };
 		84781AEA2687502300C21365 /* ModalVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalVC.xib; sourceTree = "<group>"; };
@@ -188,6 +192,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		846558A82689BA170069282D /* FontSize */ = {
+			isa = PBXGroup;
+			children = (
+				84781AEE268796CE00C21365 /* ModalViewController.swift */,
+				84781AEF268796CE00C21365 /* ModalViewController.xib */,
+			);
+			path = FontSize;
+			sourceTree = "<group>";
+		};
+		846558A92689BA2B0069282D /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				846558AA2689BA560069282D /* WebViewVC.swift */,
+				846558AB2689BA560069282D /* WebViewVC.xib */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		84781AEC2687502700C21365 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +222,8 @@
 		84781AED268796B800C21365 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				84781AEE268796CE00C21365 /* ModalViewController.swift */,
-				84781AEF268796CE00C21365 /* ModalViewController.xib */,
+				846558A92689BA2B0069282D /* WebView */,
+				846558A82689BA170069282D /* FontSize */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -594,6 +616,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846558AD2689BA560069282D /* WebViewVC.xib in Resources */,
 				84781AEB2687502300C21365 /* ModalVC.xib in Resources */,
 				84A78647268034BA00D06CF5 /* itemHorizontal.xib in Resources */,
 				849BCEB6267D02CC0091A9A3 /* LaunchScreen.storyboard in Resources */,
@@ -764,6 +787,7 @@
 				84A786892681F84200D06CF5 /* PostBySourceModel.swift in Sources */,
 				849BCEA9267D02C90091A9A3 /* SceneDelegate.swift in Sources */,
 				84A7864E26803F8C00D06CF5 /* ListVerticalViewCell.swift in Sources */,
+				846558AC2689BA560069282D /* WebViewVC.swift in Sources */,
 				84A786872681F04900D06CF5 /* Identifier.swift in Sources */,
 				84A78645268034A700D06CF5 /* itemHorizontal.swift in Sources */,
 				84A7864A26803E8B00D06CF5 /* EntertainmentVC.swift in Sources */,

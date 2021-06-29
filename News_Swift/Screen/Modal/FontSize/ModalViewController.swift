@@ -6,39 +6,47 @@
 //
 
 import UIKit
+
 typealias CloseModal = () -> Void
+typealias HandleChangeFontSize = (Float) -> Void
 class ModalViewController: UIViewController {
     var close : CloseModal!
+    var changeFont : HandleChangeFontSize!
+    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var viewwww: UIView!
     @IBOutlet var viewModal: UIView!
+    let total: Float = 1.4
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+    }
+    func initView() {
         viewwww.layer.cornerRadius = 16
-//        viewModal.backgroundColor = UIColor(red: 12/255, green: 13/255, blue: 14/255, alpha: 0.5)
-
+        slider.maximumValue = total
+        slider.minimumValue = 1
         let dismis = UITapGestureRecognizer(target: self, action:  #selector(self.closeModal))
         self.viewModal.addGestureRecognizer(dismis)
-        // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        let ratio = defaults.float(forKey: "ratio")
+        slider?.value = ratio != nil ? ratio : 1.0
     }
+}
+
+// action
+extension ModalViewController {
     @objc func closeModal(sender : UITapGestureRecognizer) {
         close()
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func changeFontSize(handle : @escaping HandleChangeFontSize) {
+        self.changeFont = handle
     }
-     
-     */
-//    @IBAction func handleDismisModal(_ sender: UIButton) {
-//        close()
-//    }
+    
+    @IBAction func change(_ sender: UISlider) {
+        let ratio = round(sender.value * 10)/10
+        changeFont(ratio)
+    }
+    
     func dismisModal(handle : @escaping CloseModal) {
         self.close = handle
     }
